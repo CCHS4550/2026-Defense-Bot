@@ -17,7 +17,6 @@ import com.pathplanner.lib.commands.PathfindingCommand;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import frc.robot.Subsystems.Drive.Drive.WantedState;
 import org.littletonrobotics.junction.LogFileUtil;
 import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
@@ -98,7 +97,7 @@ public class Robot extends LoggedRobot {
   /** This function is called once when the robot is disabled. */
   @Override
   public void disabledInit() {
-    robotContainer.resetSimulationField();
+    // robotContainer.resetSimulationField();
   }
 
   /** This function is called periodically when disabled. */
@@ -108,12 +107,12 @@ public class Robot extends LoggedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    robotContainer.resetSimulationField();
+    // obotContainer.resetSimulationField();
 
-    new InstantCommand(
-            () -> robotContainer.drive.setWantedState(WantedState.AUTO), robotContainer.drive)
-        .schedule();
-    autonomousCommand = robotContainer.getAutonomousCommand();
+    /*new InstantCommand(
+        () -> robotContainer.drive.setWantedState(WantedState.AUTO), robotContainer.drive)
+    .schedule();*/
+    // autonomousCommand = robotContainer.getAutonomousCommand();
     new InstantCommand(() -> System.out.println("auto")).schedule();
 
     // schedule the autonomous command (example)
@@ -156,6 +155,6 @@ public class Robot extends LoggedRobot {
   /** This function is called periodically whilst in simulation. */
   @Override
   public void simulationPeriodic() {
-    robotContainer.updateSimulation();
+    // robotContainer.updateSimulation();
   }
 }
