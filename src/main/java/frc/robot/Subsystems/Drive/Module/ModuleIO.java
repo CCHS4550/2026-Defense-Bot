@@ -85,7 +85,7 @@ public interface ModuleIO {
 
   default void setDriveVelocity(double velocity) {}
 
-  default void setTurnPosition(DoubleSupplier angle) {}
+  default void setTurnPosition(Rotation2d rotation) {}
 
   default void stop() {}
 

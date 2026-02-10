@@ -172,10 +172,6 @@ public final class Constants {
     public static final double driveKs = 0.16681;
     public static final double driveKv = 2.609;
     public static final double driveKa = 0.51582;
-    public static final double driveSimP = 0.01;
-    public static final double driveSimD = 0.0;
-    public static final double driveSimKs = 0.0;
-    public static final double driveSimKv = 0.0789;
 
     // Turn motor configuration
     public static final int turnMotorCurrentLimit = 60;
@@ -192,8 +188,6 @@ public final class Constants {
     public static final double turnKp = 2.0;
     public static final double turnKi = 0.0;
     public static final double turnKd = 0.0;
-    public static final double turnSimP = 8.0;
-    public static final double turnSimD = 0.0;
     public static final double turnPIDMinInput = 0; // Radians
     public static final double turnPIDMaxInput = 2 * Math.PI; // Radians
 
@@ -226,23 +220,6 @@ public final class Constants {
             moduleTranslations);
 
     // information for out simulated robot
-    public static final DriveTrainSimulationConfig mapleSimConfig =
-        DriveTrainSimulationConfig.Default()
-            .withCustomModuleTranslations(moduleTranslations)
-            .withRobotMass(Kilogram.of(robotMassKg))
-            .withGyro(COTS.ofPigeon2())
-            .withSwerveModule(
-                new SwerveModuleSimulationConfig(
-                    driveGearbox,
-                    turnGearbox,
-                    driveMotorReduction,
-                    turnMotorReduction,
-                    Volts.of(0.1),
-                    Volts.of(0.1),
-                    Meters.of(wheelRadiusMeters),
-                    KilogramSquareMeters.of(0.02),
-                    wheelCOF));
-
     public static final double AP_MAXACCEL_METERSPERSECSQUARED = 0;
     public static final double AP_MAXJERK_METERSPERSECCUBED = 0;
     public static final Distance AP_BEELINE_RADIUS = Meters.of(0.1);
