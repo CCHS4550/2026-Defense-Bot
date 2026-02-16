@@ -1,5 +1,15 @@
 package frc.robot.Subsystems.Drive;
-// all the imports are missing btw
+
+import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.math.controller.ProfiledPIDController;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.kinematics.SwerveModulePosition;
+import edu.wpi.first.math.trajectory.TrapezoidProfile;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
+import frc.robot.Subsystems.Drive.Module.ModuleIO;
+import frc.robot.Subsystems.Drive.Module.Module;
+
 public class Drive extends SubsystemBase {
 
     private Module[] modules = new Module[4];

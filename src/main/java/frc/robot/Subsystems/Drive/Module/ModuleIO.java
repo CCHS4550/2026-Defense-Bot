@@ -27,7 +27,7 @@ public interface ModuleIO {
     DRIVE,
     CHARACTERIZE
   }
-
+  @AutoLog
   public static class ModuleIOOutputs {
     public ModuleIOOutputMode mode = ModuleIOOutputMode.COAST;
     public double driveVelocityRotationsPerSecond = 0.0;
